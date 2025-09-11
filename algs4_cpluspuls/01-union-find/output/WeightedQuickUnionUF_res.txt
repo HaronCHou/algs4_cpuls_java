@@ -1,0 +1,3 @@
+  >>>  Input file: 2 components  cost 2 ms
+  >>>  Input file: 3 components  cost 168 ms
+  >>>  Input file: 757539 components  cost 72089 ms

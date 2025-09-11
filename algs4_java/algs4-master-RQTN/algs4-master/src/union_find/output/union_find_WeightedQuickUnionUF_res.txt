@@ -1,0 +1,6 @@
+class union_find.WeightedQuickUnionUF
+  >>>  Input file: 2 components  cost 0.0ms
+class union_find.WeightedQuickUnionUF
+  >>>  Input file: 3 components  cost 7.0ms
+class union_find.WeightedQuickUnionUF
+  >>>  Input file: 757539 components  cost 253.0ms

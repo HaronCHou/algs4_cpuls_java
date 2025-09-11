@@ -1,0 +1,18 @@
+# 1. 编译四种算法
+javac-algs4 union_find/QuickFindUF.java   union_find/QuickUnionUF.java union_find/WeightedQuickUnionUF.java union_find/WeightedQuickUnionPCUF.java 
+
+# 2. 加上时间开销测试：分别测试在3种规模上的时间开销
+    # 写在一个bash中去，然后把输出打印出来，yes
+java-algs4 union_find.QuickFindUF < union_find/input/tiny.txt > union_find/output/QuickFindUF_tiny_res.txt
+java-algs4 union_find.QuickFindUF < union_find/input/mediumUF.txt > union_find/output/QuickFindUF_medium_res.txt
+java-algs4 union_find.QuickFindUF < union_find/input/largeUF.txt > union_find/output/QuickFindUF_large_res.txt
+
+    # version 2
+    # java-algs4 union_find.QuickFindUF < union_find/input/tiny.txt > union_find/output/QuickFindUF_res.txt &&
+    # java-algs4 union_find.QuickFindUF < union_find/input/mediumUF.txt >> union_find/output/QuickFindUF_res.txt &&
+    # java-algs4 union_find.QuickFindUF < union_find/input/largeUF.txt >> union_find/output/QuickFindUF_res.txt
+
+    # version 3 >>> uf.bash    
+
+# 3. 对此C++和java的结果
+

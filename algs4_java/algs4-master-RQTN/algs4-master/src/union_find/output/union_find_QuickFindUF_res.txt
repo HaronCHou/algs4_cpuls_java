@@ -1,0 +1,6 @@
+class union_find.QuickFindUF
+  >>>  Input file: 2 components  cost 1.0ms
+class union_find.QuickFindUF
+  >>>  Input file: 3 components  cost 8.0ms
+class union_find.QuickFindUF
+  >>>  Input file: 757539 components  cost 36674.0ms

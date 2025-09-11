@@ -1,0 +1,3 @@
+class union_find.QuickFindUF
+3 components
+8.0 ms
