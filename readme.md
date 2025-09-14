@@ -1,6 +1,34 @@
+- [1.5 union_find](1.5_union_find.md)
+  - application
+    - 二值图标记：CCL 联通域标记；
+  - homework: [percolation](hw1_percolation.md)
+
+
 ### 一、java环境配置
-1. Linux IDEA 安装及环境配置：https://blog.csdn.net/haronchou/article/details/135597443
-2. 普林斯顿算法课 Java环境配置 https://blog.csdn.net/haronchou/article/details/78753222
+
+1. https://lift.cs.princeton.edu/java/linux/ 官方出了Intellji 2025.2的安装教程
+
+   1. https://youtrack.jetbrains.com/articles/IDEA-A-2100662485/IntelliJ-IDEA-2025.2-252.23892.409-build-Release-Notes 参考发行日志
+      ` Plugin 'LIFT-TigerFile' (edu.princeton.cs.lift.tigerfile, version=1.4.0) requires IDE build 232.* or older, but the current build is IC-252.23892.409`
+      - LIFT插件，需要IDE build 232.* ，就是IntelliJ 2023.2版本
+      - 'Plugin DevKit' (DevKit, version=252.25557.23) requires IDE build 252.25557 又要2025.2版本
+
+   2. 计划先回退232,看是否能出现：LIFT->Recompile, LIFT->Run----cannot
+   3. please read https://lift.cs.princeton.edu/java/linux/  for details in faqs
+
+   ```
+   2025-09-13 22:30:48,036 [    234]   WARN - #c.i.i.p.PluginManager - Problems found loading plugins:
+     Plugin 'Plugin DevKit' (DevKit, version=252.25557.23) requires IDE build 252.25557 or newer, but the current build is IC-252.23892.409
+     Plugin 'LIFT-TigerFile' (edu.princeton.cs.lift.tigerfile, version=1.4.0) requires IDE build 232.* or older, but the current build is IC-252.23892.409
+   2025-09-13 22:30:48,682 [    880]   WARN - #c.i.i.s.p.i.BundledSharedIndexProvider - Bundled shared index is not found at: /home/dl/zhr/software_package/ideaIC-2025.2/idea-IC-252.23892.409/jdk-shared-indexes
+   JCEF_V(30:49:122): Found cef_server binary '/home/dl/zhr/software_package/ideaIC-2025.2/idea-IC-252.23892.409/jbr/lib/cef_server' via System.getProperty('java.home')=/home/dl/zhr/software_package/ideaIC-2025.2/idea-IC-252.23892.409/jbr
+   JCEF_V(30:49:122): Java is started via native launcher. Found cef_server path /home/dl/zhr/software_package/ideaIC-2025.2/idea-IC-252.23892.409/jbr/lib/cef_server (via system propety)
+   2025-09-13 22:30:50,223 [   2421]   WARN - #c.i.s.c.i.StationSocketConnectionLoop - Discovery connection failed with NoSuchFileException (/run/user/1000/jb.station.sock)
+   2025-09-13 22:30:51,178 [   3376]   WARN - #c.i.s.c.i.StationSocketConnectionLoop - RecentProjects connection failed with NoSuchFileException (/run/user/1000/jb.station.sock)
+   
+   ```
+
+   
 
 > - C++是自己实现；java是同步验证；java课程本身是有源码参考的。
 > - C++自己实现更印象深刻。
@@ -40,42 +68,4 @@ java-introcs StdAudio # 测试是否安装成功
   - [Python](https://github.com/itu-algorithms/itu.algs4) by ITU Copenhagen
 
   - [Python](https://github.com/shellfly/algs4-py) by Li Hao
-
-# 算法4
-
-## 1.5 union-find
-
-- 代码：`/home/dl/zhr/code/algs4/algs4_java/algs4-master-RQTN/algs4-master/src/union_find`
-
-  - terminal: `javac-algs4 xxx.java`, `java-algs4 xxx` 这样才能找到algs4库的依赖；然后执行；
-
-  ```bash
-  ~/zhr/code/algs4/algs4_java/algs4-master-RQTN/algs4-master/src$ java-algs4 union_find.QuickFindUF < union_find/input/tiny.txt 
-  # 这样才运行成功，也是不理解；
-  包名：union_find
-  路径：得在union_find上层文件夹
-  输入：< 
-  输出：>
-  ```
-
-|                        | tiny  | medium | large     |
-| ---------------------- | ----- | ------ | --------- |
-| QuickFindUF            | 1ms   | 8ms    | 36674.0ms |
-| QuickUnionUF           | 1ms   | 9ms    | 242.0ms   |
-| WeightedQuickUnionUF   | 0.0ms | 7.0ms  | 253ms     |
-| WeightedQuickUnionPCUF | 0.0ms | 7.0ms  | 264ms     |
-
-- C++版本：
-  - 有bug需要优化
-
-```bash
-规模=10 unions次数=8     共有连通分量=2 components!     cost=4ms
-规模=625        unions次数=622   共有连通分量=3 components!     cost=582ms
-规模=10 unions次数=8     共有连通分量=2 components!     cost=3ms
-规模=625        unions次数=622   共有连通分量=3 components!     cost=256ms
-规模=1000000    unions次数=242461        共有连通分量=757539 components!        cost=69355ms
-规模=10 unions次数=8     共有连通分量=2 components!     cost=4ms
-规模=625        unions次数=622   共有连通分量=3 components!     cost=258ms
-规模=1000000    unions次数=242461        共有连通分量=757539 components!        cost=75841ms
-```
 
