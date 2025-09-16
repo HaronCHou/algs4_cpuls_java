@@ -6,9 +6,9 @@
 
 #include <chrono>
 
-class QuickUion_V3{
+class WeightedQuickUnionPCUF{
 public:
-    QuickUion_V3(int n)
+    WeightedQuickUnionPCUF(int n)
     {
         cnt = n;
         components_counts = n;
@@ -21,7 +21,7 @@ public:
         }
     }
 
-    ~QuickUion_V3()
+    ~WeightedQuickUnionPCUF()
     {
         delete[] id;
         delete[] sz;
@@ -34,9 +34,10 @@ public:
     int root(int p)
     {
         size_t array_visit_cnts = 0;
-        // 递归
+        // 递归 p--id[p]--id[id[p]]
         while(p != id[p]){
-            p = id[p];
+            id[p] = id[id[p]]; // p-child, id[p]-parent, id[id[p]]-grandparent
+            p = id[p]; // 当前节点p---爷节点，实现路径压缩
             array_visit_cnts++;
         }
         //  std::cout << "find array_visit_cnts=" << array_visit_cnts << std::endl;
@@ -119,9 +120,9 @@ private:
     int components_counts;
 };
 
-void quick_union_test_v3()
+void WeightedQuickUnionPCUF_test()
 {
-    QuickUion_V3 uf(10);
+    WeightedQuickUnionPCUF uf(10);
     // uf.printf_id();
 
     uf.union_(4,1);
@@ -156,7 +157,7 @@ void quick_union_test_v3()
 #endif
 
 }
-void quick_union_v3_txt(const std::string str)
+void WeightedQuickUnionPCUF_test_txt(const std::string str)
 {
 
     std::ifstream file(str);
@@ -174,7 +175,7 @@ void quick_union_v3_txt(const std::string str)
         // cout << "scale: " << N << endl;
     }
 
-    QuickUion_V3 uf(N);
+    WeightedQuickUnionPCUF uf(N);
 
     std::string line;
 

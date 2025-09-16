@@ -4,8 +4,8 @@
 
 #include "quick_uion.h"
 #include "quick_union_v2.h"
-#include "quick_union_v3.h"
-
+#include "weighted_quick_union.h"
+#include "WeightedQuickUnionPCUF.h"
 
 int main(int args, char* argv[])
 {
@@ -18,10 +18,10 @@ int main(int args, char* argv[])
     // 1. 降低树的查找高度-->depth(tree) < log2(N)
 
 
-
+#if 0 
     // 批量进行：https://algs4.cs.princeton.edu/15uf/
-    quick_find_txt("/home/dl/zhr/code/algs4/01-union-find/input/tiny.txt");
-    quick_find_txt("/home/dl/zhr/code/algs4/01-union-find/input/mediumUF.txt");
+    quick_find_txt("../input/tiny.txt");
+    quick_find_txt("../input/mediumUF.txt");
     // quick_find_txt("/home/dl/zhr/code/algs4/01-union-find/input/largeUF.txt");
 
 // v1有bug
@@ -34,21 +34,22 @@ int main(int args, char* argv[])
 // quick-uion 规模=10 unions次数=8     共有连通分量=2 components!     cost=3ms
 // quick-uion 规模=625        unions次数=594   共有连通分量=31 components!    cost=217ms
 
-    quick_union_v2_txt("/home/dl/zhr/code/algs4/01-union-find/input/tiny.txt");
-    quick_union_v2_txt("/home/dl/zhr/code/algs4/01-union-find/input/mediumUF.txt");
-    quick_union_v2_txt("/home/dl/zhr/code/algs4/01-union-find/input/largeUF.txt");
+    quick_union_v2_txt("../input/tiny.txt");
+    quick_union_v2_txt("../input/mediumUF.txt");
+    quick_union_v2_txt("../input/largeUF.txt");
 
     // quick_union_weighted
-    quick_union_v3_txt("/home/dl/zhr/code/algs4/01-union-find/input/tiny.txt");
-    quick_union_v3_txt("/home/dl/zhr/code/algs4/01-union-find/input/mediumUF.txt");
-    quick_union_v3_txt("/home/dl/zhr/code/algs4/01-union-find/input/largeUF.txt");
+    quick_union_v3_txt("../input/tiny.txt");
+    quick_union_v3_txt("../input/mediumUF.txt");
+    quick_union_v3_txt("../input/largeUF.txt");
 
+#else
+// 单独debug某一个小程序
+    quick_union_test_v3();
+    WeightedQuickUnionPCUF_test();
+
+#endif
 
 
     return 0;
 }
-
-
-
-
-

@@ -1,0 +1,10 @@
+规模=10	unions次数=8	 共有连通分量=2 components!	cost=4ms
+规模=625	unions次数=622	 共有连通分量=3 components!	cost=344ms
+
+规模=10	unions次数=8	 共有连通分量=2 components!	cost=3ms
+规模=625	unions次数=622	 共有连通分量=3 components!	cost=238ms
+规模=1000000	unions次数=242461	 共有连通分量=757539 components!	cost=67805ms
+
+规模=10	unions次数=8	 共有连通分量=2 components!	cost=3ms
+规模=625	unions次数=622	 共有连通分量=3 components!	cost=246ms
+规模=1000000	unions次数=242461	 共有连通分量=757539 components!	cost=72301ms

@@ -19,3 +19,5 @@ $CLASS_NAME < input/largeUF.txt >> $OUTPUT_FILE
 # bash uf.bash build/QuickUionUF
 # bash uf.bash build/WeightedQuickUnionUF
 # bash uf.bash build/WeightedQuickUnionPCUF
+
+# bash uf.bash build/QuickFindUF && uf.bash build/QuickUionUF && uf.bash build/WeightedQuickUnionUF && uf.bash build/WeightedQuickUnionPCUF
