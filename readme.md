@@ -6,8 +6,17 @@
 
 - [1.5 union_find](1.5_union_find.md) ：QuickFindUF.cpp, QuickUionUF.cpp, WeightedQuickUnionUF.cpp, WeightedQuickUionPCUF.cpp 四种并查集算法
   - application：二值图标记：CCL 联通域标记；（待补充代码和应用） 参考：YCCLLAB这个库
+
   - homework: [percolation](hw1_percolation.md) 
-- Tips: vscode的代码自动补全功能很好。copolit 想办法多用；
+
+    > Tips: vscode的代码自动补全功能很好。copolit 想办法多用；
+
+  - 《算法4》课后习题：https://github.com/liangxin1988/Algorithms-4th-Anwser 
+    - https://github.com/13247574565/Algorithms?tab=readme-ov-file 
+    - https://blog.csdn.net/u013541140/article/details/53222770
+    - https://github.com/aistrate/AlgorithmsSedgewick
+
+- [1.4_analysis_of_algorithms.md](1.4_analysis_of_algorithms.md) 算法分析
 
 ---
 

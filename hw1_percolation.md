@@ -14,7 +14,7 @@
 |  zhr_v0  | quick-uion（影响不大） |           2-for           | $O(N^2)$      |    pass    |        |        |
 |    v1    |  weighted-quick-uinon  |           2-for           |                 |            |        |        |
 |    v2    |  weighted-quick-uinon  | virtual-top & bottom但倒灌 | 常数时间！      |            |        |        |
-|          |                        |                            |                 |            |        |        |
+| v3 | 2 * weighted-quick-uinon | virtual-top & bottom | 不倒灌 |  |        |        |
 | 标准答案 |   PercolationAnswer   |  weighted-quick-uinon * 2  | 常数时间&不倒灌 |            |        |        |
 
 ```java
@@ -267,5 +267,8 @@ public void open(int i, int j) {
 
 ```bash
 javac-algs4 *.java # 多个文件一起编译
+java-algs4 PercolationVisualize input/input10.txt 3 # 解决backwash zhr_v3
+# TODO
+# zhr_v4 bonus version
 ```
 

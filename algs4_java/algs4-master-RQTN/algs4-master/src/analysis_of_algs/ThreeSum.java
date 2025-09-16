@@ -1,4 +1,4 @@
-package analysis_of_algs;
+// package analysis_of_algs;
 
 import edu.princeton.cs.algs4.In;
 import edu.princeton.cs.algs4.StdOut;

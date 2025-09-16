@@ -1,6 +1,6 @@
 .idea
 algs4_cpluspuls/01-union-find/.vscode
-
+*.class
 algs4_cpluspuls/01-union-find/build
 algs4_cpluspuls/01-union-find/build
 algs4_java/.idea
