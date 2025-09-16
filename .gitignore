@@ -1,6 +1,4 @@
-
-*.xml
-algs4.iml
+.idea
 algs4_cpluspuls/01-union-find/.vscode
 
 algs4_cpluspuls/01-union-find/build
