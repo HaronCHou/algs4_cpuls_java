@@ -4,17 +4,18 @@
 
 - 作业参考：[Algorithms, Princeton, Coursera课程整理与回顾_普林斯顿算法课-CSDN博客](https://blog.csdn.net/YunHsiao/article/details/50405328)
   - 他的百度云网盘里面含有所有详细的资料；代码；测试用例；思考；等；资料在百度网盘：[百度网盘-算法4-课后作业资料](https://pan.baidu.com/s/1hrnFvMk?_at_=1757832373276) 和前面的课程这里和回顾一起看，收益更好；
+  - Percolation作业 csdn参考：[Algorithms, Princeton, Coursera课程整理与回顾.html](hw_reference/Algorithms, Princeton, Coursera课程整理与回顾.html)
 - 学习笔记类参考：[whitejava2的普林斯顿公开课算法 每个视频的笔记摘要](http://blog.csdn.net/caipeichao2/article/details/28448947)，是每个视频的中文笔记精炼，在学习时参考很大，节约时间。
 - 我将用C++语言再写一遍，复现一下java的部分，争取齐全。
   - java部分对比 correctness通过是第一步，正确性；下面需要比较内存和时间开销，来考察算法的复杂度和时间性能；
 
-|  index  |        data structure        | percolates method | time cost  | test inputs | Memory | timing |
-| :------: | :------------------: | :---------------: | ---------- | :---------: | ------ | ------ |
-|  zhr_v0  |      quick-uion（影响不大）      |       2-for       | $O(N^2)$ |    pass    |        |        |
-|    v1    | weighted-quick-uinon |       2-for       |            |            |        |        |
-|    v2    | weighted-quick-uinon | virtual-top & bottom但倒灌 | 常数时间！ |            |        |        |
-|          |                      |                  |            |            |        |        |
-| 标准答案 |  PercolationAnswer  | weighted-quick-uinon * 2 | 常数时间&不倒灌 |            |        |        |
+|  index  |     data structure     |     percolates method     | time cost       | test inputs | Memory | timing |
+| :------: | :--------------------: | :------------------------: | --------------- | :---------: | ------ | ------ |
+|  zhr_v0  | quick-uion（影响不大） |           2-for           | $O(N^2)$      |    pass    |        |        |
+|    v1    |  weighted-quick-uinon  |           2-for           |                 |            |        |        |
+|    v2    |  weighted-quick-uinon  | virtual-top & bottom但倒灌 | 常数时间！      |            |        |        |
+|          |                        |                            |                 |            |        |        |
+| 标准答案 |   PercolationAnswer   |  weighted-quick-uinon * 2  | 常数时间&不倒灌 |            |        |        |
 
 ```java
 // 关键接口的梳理
@@ -173,13 +174,14 @@ union() = 26     find() = 4320
 N=8 T=1  time = 0.014 seconds   mean = 0.421875 stddev = NaN    95%% confidence Interval  = [NaN,NaN]
 ```
 
-|              index              |        method        |             percolates method             | time | union() | find() | N | ratio       |
-| :-----------------------------: | :-------------------: | :---------------------------------------: | ---- | ------- | :----: | - | ----------- |
-|             zhr_v1             |      quick-uion      |              2-for$O(N^2)$              |      | 26      |  4320  | 8 | 4320/26=180 |
-|               v2               | weighted-quick-uinon |                   2-for                   |      |         |        |   |             |
-|               v3               |                      |                                          |      |         |        |   |             |
-|                                |                      |                                          |      |         |        |   |             |
-| 标准答案<br />PercolationAnswer | 2 weighted-quick-uion | virtual-head<br />virtual-end $O(logN)$ |      | 96      |  314  | 8 | 3           |
+|                   index                   |             method             |                  percolates method                  | time   | union() | find() | N | find()/union() | 说明                                                                           | 是否存在<br />backwash倒灌问题 |
+| :---------------------------------------: | :-----------------------------: | :--------------------------------------------------: | ------ | ------- | :----: | - | :------------: | ------------------------------------------------------------------------------ | ------------------------------ |
+|                  zhr_v1                  |           quick-uion           |                   2-for$O(N^2)$                   | 0.016s | 26      |  4320  | 8 |  4320/26=180  | 时间复杂度太高                                                                 | no                             |
+|                    v1                    |      weighted-quick-uinon      |                        2-for                        | 0.017s | 63      | 12722 | 8 | **201** | 时间复杂度太高，数据结构影响小                                                 | no                             |
+|                    v2                    |      weighted-quick-uinon      | **virtual-head<br />virtual-end** ~$O(logN)$ | 0.016s | 64      |  250  | 8 | **3.9** | 虚拟top+bottom<br />由于每次open都要检查<br />访问频率很高；时间复杂度大大降低 | yes                            |
+|               v3-backwash1               |                                |                                                      |        |         |        | 8 |                |                                                                                |                                |
+|               v3-backwash2               |                                |                                                      |        |         |        | 8 |                |                                                                                |                                |
+| **标准答案<br />PercolationAnswer** | **2 weighted-quick-uion** |                                                      |        | 96      |  314  | 8 |       3       |                                                                                |                                |
 
 - 下面是PercolationAnswer的时间开销Test结果：
 
@@ -259,4 +261,11 @@ public void open(int i, int j) {
 
 ![](images/backwash.png)
 
-#### v2
+#### v2-backwash解决方案
+
+- backwash的关键，在于底部相互之间贯穿了；
+
+```bash
+javac-algs4 *.java # 多个文件一起编译
+```
+
