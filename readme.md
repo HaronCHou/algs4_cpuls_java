@@ -1,22 +1,23 @@
 > - 使用C++复现algs4的java代码和作业；深入理解算法；尝试自己手写代码；同步理解优化点和改进点；
 
-------
+---
 
 # 目录：
 
 - [1.5 union_find](1.5_union_find.md) ：QuickFindUF.cpp, QuickUionUF.cpp, WeightedQuickUnionUF.cpp, WeightedQuickUionPCUF.cpp 四种并查集算法
-  - application：二值图标记：CCL 联通域标记；（待补充代码和应用） 参考：YCCLLAB这个库
 
-  - homework: [percolation](hw1_percolation.md) 
+  - application：二值图标记：CCL 联通域标记；（待补充代码和应用） 参考：YCCLLAB这个库
+  - homework: [percolation](hw1_percolation.md)
 
     > Tips: vscode的代码自动补全功能很好。copolit 想办法多用；
+    >
+  - 《算法4》课后习题：https://github.com/liangxin1988/Algorithms-4th-Anwser
 
-  - 《算法4》课后习题：https://github.com/liangxin1988/Algorithms-4th-Anwser 
-    - https://github.com/13247574565/Algorithms?tab=readme-ov-file 
+    - https://github.com/13247574565/Algorithms?tab=readme-ov-file
     - https://blog.csdn.net/u013541140/article/details/53222770
     - https://github.com/aistrate/AlgorithmsSedgewick
-
 - [1.4_analysis_of_algorithms.md](1.4_analysis_of_algorithms.md) 算法分析
+- [stacks_and_queues.md](stacks_and_queues.md) 栈和队列
 
 ---
 
@@ -45,7 +46,7 @@
    JCEF_V(30:49:122): Java is started via native launcher. Found cef_server path /home/dl/zhr/software_package/ideaIC-2025.2/idea-IC-252.23892.409/jbr/lib/cef_server (via system propety)
    2025-09-13 22:30:50,223 [   2421]   WARN - #c.i.s.c.i.StationSocketConnectionLoop - Discovery connection failed with NoSuchFileException (/run/user/1000/jb.station.sock)
    2025-09-13 22:30:51,178 [   3376]   WARN - #c.i.s.c.i.StationSocketConnectionLoop - RecentProjects connection failed with NoSuchFileException (/run/user/1000/jb.station.sock)
-   
+
    ```
 
 > - C++是自己实现；java是同步验证；java课程本身是有源码参考的。

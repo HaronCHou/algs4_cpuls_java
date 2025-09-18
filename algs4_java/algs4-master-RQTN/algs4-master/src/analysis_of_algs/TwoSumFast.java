@@ -2,8 +2,8 @@
 
 import java.util.Arrays;
 
-import com.rqtn.algs.chapter1_1.BinarySearch;
-
+// import com.rqtn.algs.chapter1_1.BinarySearch;
+import edu.princeton.cs.algs4.BinarySearch;
 import edu.princeton.cs.algs4.In;
 import edu.princeton.cs.algs4.StdOut;
 import edu.princeton.cs.algs4.Stopwatch;
@@ -15,7 +15,7 @@ public class TwoSumFast {
 		int N = a.length;
 		int count = 0;
 		for (int i = 0; i < N; i++) {
-			if (BinarySearch.recursiveRank(-a[i], a) > i) {
+			if (BinarySearch.rank(-a[i], a) > i) {
 				count++;
 			}
 		}

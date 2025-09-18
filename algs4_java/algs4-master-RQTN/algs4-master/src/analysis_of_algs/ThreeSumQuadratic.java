@@ -1,4 +1,4 @@
-package analysis_of_algs;
+// package analysis_of_algs;
 
 import java.util.Arrays;
 

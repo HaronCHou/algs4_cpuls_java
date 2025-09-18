@@ -1,0 +1,5 @@
+      	         ThreeSum	     ThreeSumFast	ThreeSumQuadratic
+/1Kint	           0.1020	           0.0130	           0.0020
+/2Kint	           0.7520	           0.0430	           0.0040
+/4Kint	           5.9730	           0.1960	           0.0170
+/8Kint	          47.5710	           0.8350	           0.0650
