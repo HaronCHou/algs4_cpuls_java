@@ -17,7 +17,7 @@
     - https://blog.csdn.net/u013541140/article/details/53222770
     - https://github.com/aistrate/AlgorithmsSedgewick
 - [1.4_analysis_of_algorithms.md](1.4_analysis_of_algorithms.md) 算法分析
-- [stacks_and_queues.md](stacks_and_queues.md) 栈和队列
+- [stacks_and_queues.md](2.1_stacks_and_queues.md) 栈和队列
 
 ---
 
